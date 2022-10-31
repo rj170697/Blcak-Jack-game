@@ -3,13 +3,13 @@
 
 # In[1]:
 
-
+# This is black jack game 
 import random
 
 
 # In[2]:
 
-
+# creating lists and dictionary for cards.
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
@@ -18,7 +18,7 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 
 # In[3]:
 
-
+# A class of card.
 class card:
     def __init__(self,suit,rank):
         self.suit=suit
@@ -30,13 +30,13 @@ class card:
 
 # In[4]:
 
-
+# a class of player
 class player:
-    def __init__ (self,bank_account,name):
+    def __init__ (self,bank_account,name):   # player can have bank account, and name as
         self.player_card=[]
         self.bank_account=bank_account
         self.name=name
-    def add_card_p(self,new_card):
+    def add_card_p(self,new_card):          # class of player can perform activities like adding card and transaction in bank account
         self.player_card.append(new_card)
     def account_add(self,bet_money):
         self.bank_account=self.bank_account + bet_money
@@ -51,7 +51,7 @@ class player:
 # In[5]:
 
 
-class deck:
+class deck:               # a class for deck is made to to shuffle and deal cards
     def __init__(self):
         self.new_deck=[]
         for i in suits:
@@ -69,7 +69,7 @@ class deck:
 # In[6]:
 
 
-class dealer:
+class dealer:              # in this game dealer is computer
     def __init__(self):
         self.dealer_card=[]
         
@@ -96,7 +96,7 @@ def replay(k):
 
 # In[8]:
 
-
+# Logic of game , using built classes in logical manner to process the game
 print('welcome to blck jack')
 player_name=input('enter your name')
 player_money=int(input('enter amount'))
@@ -134,7 +134,7 @@ while game_on:
             print(player_1.player_card[i])
             
 
-        choice_p=input('want to hit ?')
+        choice_p=input('want to hit ? y/n ')
         
         if choice_p.upper()=='Y':
             
@@ -196,7 +196,7 @@ while game_on:
         print('dealer cards')    
         for j in range(count_p+2):
             print(dealer_1.dealer_card[j]) 
-        ask_player=input('play one more?')
+        ask_player=input('play one more? y/n')
         k=ask_player.upper()
         if  not replay(k[0]):
             break
@@ -205,31 +205,28 @@ while game_on:
         
 
 
-# In[9]:
+
+# this is simple black jack game with pretty basic user graphic interfac.
+# INPUT are strings
 
 
-replay('Y')
 
 
-# In[10]:
 
 
-k='y'
 
 
-# In[11]:
 
 
-y=k.upper()
 
 
-# In[12]:
 
 
-y.upper()
 
 
-# In[ ]:
+
+
+
 
 
 
